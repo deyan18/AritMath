@@ -1,5 +1,7 @@
 package us.mis.calculator
 
+import android.content.Context
+import android.content.Intent
 import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -72,6 +74,7 @@ class MainActivity : AppCompatActivity() {
                 heart1ImageView.setImageResource(R.drawable.heart_border_icon)
                 heart2ImageView.setImageResource(R.drawable.heart_border_icon)
                 heart3ImageView.setImageResource(R.drawable.heart_border_icon)
+                endGame()
             }
             1 -> {
                 heart1ImageView.setImageResource(R.drawable.heart_fill_icon)
@@ -150,7 +153,7 @@ class MainActivity : AppCompatActivity() {
                 answOptions.add(wrongAnsw)
             }
         } while (answOptions.size < 4)
-        //answOptions.shuffle()
+        answOptions.shuffle()
     }
 
     fun updatePoints(): Unit{
@@ -179,6 +182,7 @@ class MainActivity : AppCompatActivity() {
             override fun onFinish() {
                 timeLeftInMillis = 0
                 updateCountdown()
+                endGame()
                 // Handle end of game logic here
             }
         }.start()
@@ -193,6 +197,22 @@ class MainActivity : AppCompatActivity() {
         timeLeftInMillis = timeLeftInMillis + time // Increase time by 10 seconds
         countdownTimer.cancel()
         startCountdownTimer()
+    }
+
+    fun endGame(): Unit{
+
+        val sharedPreference =  getSharedPreferences("PREFERENCE_NAME", Context.MODE_PRIVATE)
+        val highscore = sharedPreference.getInt("highscore", 0)
+
+        if(points > highscore){
+            var editor = sharedPreference.edit()
+            editor.putInt("highscore", points)
+            editor.commit()
+        }
+
+        val intent = Intent(this, StartActivity::class.java)
+        startActivity(intent)
+        finish()
     }
 
 
