@@ -56,7 +56,8 @@ class MainActivity : AppCompatActivity() {
         startCountdownTimer()
     }
 
-    fun checkAnsw(userAnsw: String): Unit{
+    fun checkAnsw(userAnsw: String): Boolean{
+        var answ = true
         if(userAnsw.equals(operationAnsw.toString())){
             updatePoints()
             generateOperation()
@@ -64,8 +65,10 @@ class MainActivity : AppCompatActivity() {
             lives--
             modifyCountdown(-5000)
             countdownButtonColorUpdate(false)
+            answ = false
         }
         updateHearts()
+        return answ
     }
 
     fun updateHearts(): Unit{
@@ -99,8 +102,19 @@ class MainActivity : AppCompatActivity() {
         for ((index, button) in buttons.withIndex()) {
             button.text = answOptions[index].toString()
             button.setOnClickListener {
-                checkAnsw(button.text.toString())
+                if(!checkAnsw(button.text.toString())){
+                    button.setBackgroundColor(Color.RED)
+                }else{
+                    button.setBackgroundColor(Color.GREEN)
+                }
+
+                Handler(Looper.getMainLooper()).postDelayed({
+                    button.setBackgroundColor(Color.parseColor("#00BCD4"))
+                }, 500)
+
                 updateScores()
+
+
             }
         }
     }
