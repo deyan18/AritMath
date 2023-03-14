@@ -17,7 +17,7 @@ class StartActivity : AppCompatActivity() {
 
         val sharedPreference =  getSharedPreferences("PREFERENCE_NAME", Context.MODE_PRIVATE)
         val highscore = sharedPreference.getInt("highscore", 0)
-        highscoreTextView.text = "Highest Scoreee: $highscore"
+        highscoreTextView.text = "Highest Score: $highscore"
 
         startButton.setOnClickListener{
             val intent = Intent(this, MainActivity::class.java)
