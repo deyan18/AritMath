@@ -1,8 +1,8 @@
-# ArithMath - Kotlin Math Game App
+# AritMath - Kotlin Math Game App
 
 ![App screenshots](https://i.imgur.com/cO0QRIO.png)
 
-This project was developed as part of the "Master's Degree in Software Engineering: Cloud, Data, and Information Technology Management" program. ArithMath is a simple multiplication game app developed in Kotlin for Android. The app allows users to guess the correct answer for given multiplication problems and provides features such as user high score, lives, countdown timer, points, and level up functionality.
+This project was developed as part of the "Master's Degree in Software Engineering: Cloud, Data, and Information Technology Management" program. AritMath is a simple multiplication game app developed in Kotlin for Android. The app allows users to guess the correct answer for given multiplication problems and provides features such as user high score, lives, countdown timer, points, and level up functionality.
 
 ## Features
 
@@ -14,7 +14,7 @@ This project was developed as part of the "Master's Degree in Software Engineeri
 
 ## What I Learned
 
-During the development of ArithMath, I gained several new skills and knowledge, including:
+During the development of AritMath, I gained several new skills and knowledge, including:
 
 - Kotlin programming: This project was my first experience with Kotlin, and I learned how to use Kotlin in Android app development.
 - Shared Preferences: I learned how to use Shared Preferences in Android to store and retrieve user data, such as high scores and level information.
@@ -22,7 +22,7 @@ During the development of ArithMath, I gained several new skills and knowledge, 
 
 ## Getting Started
 
-To run ArithMath on your Android device or emulator, follow these steps:
+To run AritMath on your Android device or emulator, follow these steps:
 
 1. Clone the repository to your local machine.
 2. Open the project in Android Studio.
@@ -30,7 +30,7 @@ To run ArithMath on your Android device or emulator, follow these steps:
 
 ## Future Development
 
-ArithMath is a basic version of a math game app, and there are several potential areas for future development, including:
+AritMath is a basic version of a math game app, and there are several potential areas for future development, including:
 
 - Adding more game modes, such as division, addition, and subtraction.
 - Implementing a leaderboard to allow users to compete with other players.
@@ -40,4 +40,4 @@ ArithMath is a basic version of a math game app, and there are several potential
 
 ## Conclusion
 
-ArithMath has been a valuable learning experience for me, as it was my first Kotlin app and provided me with insights into Android app development and interface design. I plan to continue improving and expanding the app based on user feedback and my own ideas.
+AritMath has been a valuable learning experience for me, as it was my first Kotlin app and provided me with insights into Android app development and interface design. I plan to continue improving and expanding the app based on user feedback and my own ideas.
